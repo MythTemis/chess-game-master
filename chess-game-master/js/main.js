@@ -43,79 +43,32 @@ window.onload = function(){
     var cl;
 
 
-    //------------------------------------------------------------
-    //Create a random game 
-    var values = [] 
+        //Create a random game 
+        var values = [] 
 
 
 
-    function getRandomInt(max) {
-        return Math.floor(Math.random() * max);
-      }
-
-    function randomGame(){
-
-        var pawnCountB = getRandomInt(8);
-        var knightCountB = getRandomInt(2);
-        var bishopCountB = getRandomInt(2);
-        var kingCountB = 1; 
-
-        var pawnCountR = getRandomInt(8);
-        var knightCountR = getRandomInt(2);
-        var bishopCountR = getRandomInt(2);
-        var kingCountR = 1;
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+          }
+    
+        function randomGame(){
+    
+            var pawnCountB = 8;
+            var knightCountB = 2;
+            var rookCountB = 2;
+            var bishopCountB = 2;
+            var queenCountB = 1;
+            var kingCountB = 1;
 
 
-
-        console.log("Pawn Count: " +  pawnCountB)
-        console.log("Knight Count: " + knightCountB)
-
-        for(let i = 0; i < 64; i++){
-
-
-            if(getRandomInt(6) == 1 && pawnCountB > 0 && values.indexOf(i) != " "){
-                values.push("p")
-                pawnCountB--;
-            }if(getRandomInt(6) == 2 && knightCountB > 0 && values.indexOf(i) != " "){
-                values.push("n");
-                knightCountB--;
-            }if(getRandomInt(6) == 2 && bishopCountB > 0 && values.indexOf(i) != " "){
-                values.push("b");
-                bishopCountB--;
-            }if(getRandomInt(6) == 1 && pawnCountR > 0 && values.indexOf(i) != " "){
-                values.push("o")
-                pawnCountR--;
-            }if(getRandomInt(6) == 2 && knightCountR > 0 && values.indexOf(i) != " "){
-                values.push("v");
-                knightCountR--;
-            }if(getRandomInt(6) == 2 && bishopCountR > 0 && values.indexOf(i) != " "){
-                values.push("m");
-                bishopCountR--;
-            }if(getRandomInt(6) == 2 && kingCountB > 0 && values.indexOf(i) != " "){
-                values.push("k");
-                kingCountB--;
-            }if(getRandomInt(6) == 2 && kingCountR > 0 && values.indexOf(i) != " "){
-                values.push("l");
-                kingCountR--;
-            }
-            
-            else{
-                values.push(0)
-            }
-
-          
-            
+    
+    
+    
+        
         }
-    }
-
-    randomGame();
-
- 
-
-
-
-
-//-------------------------------------------------------------------------
+    
+        randomGame();
 
 
 
