@@ -1,7 +1,13 @@
 #background {
     font-family:chess;
     margin: 0;
-    background-color: white;
+    background-color:white;
+}
+
+#PVEbackground {
+  font-family:chess;
+  margin: 0;
+  background-color: #B8BACF;
 }
 
 .square {

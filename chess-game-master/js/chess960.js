@@ -163,18 +163,18 @@ function chess960(){
         for(var n = 0; n < 64; n++){
             if(Math.floor(n/8)%2 === 0){
                 if(n%2 === 0){
-                    sqs[n].style.background = '#9ff';
+                    sqs[n].style.background = '#B8BACF';
                 }
                 else {
-                    sqs[n].style.background = '#5fa';
+                    sqs[n].style.background = '#293241';
                 }
             }
             else {
                 if(n%2 === 1){
-                    sqs[n].style.background = '#9ff';
+                    sqs[n].style.background = '#B8BACF';
                 }
                 else {
-                    sqs[n].style.background = '#5fa';
+                    sqs[n].style.background = '#293241';
                 }
             }
         }
