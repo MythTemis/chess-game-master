@@ -36,13 +36,116 @@ window.onload = function(){
 
     }
 
-    var values = ['r','n','b','q','k','b','n','r','p','p','p','p','p','p','p','p',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'o','o','o','o','o','o','o','o','t','m','v','w','l','v','m','t'];
     var ck = false;
     var cr1 = false;
     var cr2 = false;
     var cl;
 
 
+//------------------------------------------------------------
+
+var values = [] 
+
+function randomArrayShuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+    return array;
+  }
+
+var index = ["0","1","2","3","4","5","6","7"]
+var randomIndex = ( randomArrayShuffle(index))
+
+var chessPieces = ["k","q","r","n","b","r","n","b"]
+var randomChessPieces = ( randomArrayShuffle(chessPieces))
+
+function chess960(){
+  
+  
+    for(let i = 0; i < 64; i++){
+        if(i > 7 && i < 16  ){
+            values.push("p");
+        }else if(i > 47 && i < 56){
+            values.push("o");
+        }
+        else{
+            values.push(0);
+        }
+    }
+
+
+       for(i = 0; i < 8; i++){
+        //console.log(randomIndex[i]);
+        //console.log(here2[i]);
+        values[randomIndex[i]] = randomChessPieces[i];
+
+        console.log("black " + randomIndex[i]);
+        console.log("black " + randomChessPieces[i]);
+       }
+
+       for(i = 0; i < 8; i++){
+        //console.log(here[i]);
+        //console.log("white" + randomIndex[i]);
+
+        if(randomIndex[i] == "0" ){
+            randomIndex[i] = "56";
+        }else if(randomIndex[i] == "1" ){
+            randomIndex[i] = "57";
+        }else if(randomIndex[i] == "2" ){
+            randomIndex[i] = "58";
+        }else if(randomIndex[i] == "3" ){
+            randomIndex[i] = "59";
+        }else if(randomIndex[i] == "4" ){
+            randomIndex[i] = "60";
+        }else if(randomIndex[i] == "5" ){
+            randomIndex[i] = "61";
+        }else if(randomIndex[i] == "6" ){
+            randomIndex[i] = "62";
+        }else if(randomIndex[i] == "7" ){
+            randomIndex[i] = "63";
+        }
+
+        if(randomChessPieces[i] == "k" ){
+            randomChessPieces[i] = "l";
+        }else if(randomChessPieces[i] == "q" ){
+            randomChessPieces[i] = "w";
+        }else if(randomChessPieces[i] == "r" ){
+            randomChessPieces[i] = "t";
+        }else if(randomChessPieces[i] == "n" ){
+            randomChessPieces[i] = "m";
+        }else if(randomChessPieces[i] == "b" ){
+            randomChessPieces[i] = "v";
+        }
+
+        values[randomIndex[i]] = randomChessPieces[i];
+
+        console.log("white " + randomIndex[i]);
+        console.log("white " + randomChessPieces[i]);
+      
+
+        //console.log("Whilte" + randomIndex[i]);
+       }
+
+
+
+
+     
+   
+  
+}
+
+
+    
+ chess960();
+
+
+
+//-------------------------------------------------------------------------
 
 
 

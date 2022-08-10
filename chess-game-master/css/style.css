@@ -1,7 +1,7 @@
-body {
+#background {
     font-family:chess;
     margin: 0;
-    background-color:#000;
+    background-color: white;
 }
 
 .square {
@@ -12,3 +12,94 @@ body {
     position: absolute;
     cursor: pointer;
 }
+
+#homeBackground{
+   
+    background-image: url("https://images.wallpapersden.com/image/download/chess-hd-game_bWVlaGWUmZqaraWkpJRnZWltrWZmamc.jpg");
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
+
+#homeHeader{
+    font-size: 70px;
+    font-weight: 600;
+    color: red;
+    text-shadow: 0px 0px 5px #b393d3, 0px 0px 10px #b393d3, 0px 0px 10px #b393d3,
+      0px 0px 20px #b393d3;
+      
+}
+
+#homeSelector{
+    background-color: red;
+    color: white;
+    padding: 1em 1.5em;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+
+}
+
+#resetSelector{
+    background-color: green;
+    color: white;
+    padding: 1em 1.5em;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    
+}
+
+#chess960Selector{
+    background-color: gray;
+    color: white;
+    padding: 1em 1.5em;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    
+}
+
+
+#homeSelector:hover {
+    background-color: lightblue;
+  }
+
+#resetSelector:hover {
+    background-color: lightblue;
+  }
+
+#chess960Selector:hover {
+    background-color: lightblue;
+  }
+  
+
+
+#relative {
+    position: relative;
+    width: 1200px;
+    height: 700px;
+   
+  } 
+  
+#absolute {
+    position: absolute;
+    top: 80px;
+    right: 110px;
+    width: 200px;
+    height: 100px;
+  
+    
+  }
+
+  #absolute2 {
+    position: absolute;
+    top: 200px;
+    right: 110px;
+    width: 200px;
+    height: 100px;
+   
+    
+  }
