@@ -1,13 +1,7 @@
 #background {
     font-family:chess;
     margin: 0;
-    background-color:white;
-}
-
-#PVEbackground {
-  font-family:chess;
-  margin: 0;
-  background-color: #B8BACF;
+    background-image: url("https://permachar.co.uk/wp-content/uploads/2021/02/Raven-Accoya.jpg");
 }
 
 .square {
