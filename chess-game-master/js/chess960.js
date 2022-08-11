@@ -44,8 +44,8 @@ window.onload = function(){
 
 //------------------------------------------------------------
 
-var values = [] 
-
+var values = []
+ 
 function randomArrayShuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
     while (0 !== currentIndex) {
@@ -57,16 +57,18 @@ function randomArrayShuffle(array) {
     }
     return array;
   }
-
+ 
 var index = ["0","1","2","3","4","5","6","7"]
-var randomIndex = ( randomArrayShuffle(index))
-
+//var randomIndex = ( randomArrayShuffle(index))
+ 
 var chessPieces = ["k","q","r","n","b","r","n","b"]
-var randomChessPieces = ( randomArrayShuffle(chessPieces))
-
+//var randomChessPieces = ( randomArrayShuffle(chessPieces))
+ 
 function chess960(){
-  
-  
+ 
+    var randomIndex = ( randomArrayShuffle(index))
+    var randomChessPieces = ( randomArrayShuffle(chessPieces))
+ 
     for(let i = 0; i < 64; i++){
         if(i > 7 && i < 16  ){
             values.push("p");
@@ -78,20 +80,67 @@ function chess960(){
         }
     }
 
+    //++++++++++++++++++++++++++++++++++++++++++++=
+ 
+ 
+    var rookPosition = []
+    var kingPostion;
+    var checkPostion;
 
-       for(i = 0; i < 8; i++){
-        //console.log(randomIndex[i]);
-        //console.log(here2[i]);
-        values[randomIndex[i]] = randomChessPieces[i];
+ 
+    function randomPostion(){
 
-        console.log("black " + randomIndex[i]);
-        console.log("black " + randomChessPieces[i]);
+        for(i = 0; i < 8; i++){
+            values[randomIndex[i]] = randomChessPieces[i];
+   
+            if(values[randomIndex[i]] == "r"){
+                rookPosition.push(randomIndex[i]);
+            }
+   
+            if(values[randomIndex[i]] == "k"){
+                kingPostion = randomIndex[i];
+            }
+
+            console.log("black index " + randomIndex[i]);
+            console.log("black chess piece " + randomChessPieces[i]);
+           }
+    }
+ 
+    randomPostion();
+
+    
+        //console.log("Rook Postion: " + rookPosition)
+        //console.log("King Postion: " + kingPostion)
+ 
+        if(rookPosition[0] > kingPostion){
+         if(rookPosition[1] < kingPostion){
+             checkPostion = true;
+         }else{
+             checkPostion = false;
+            }
+        }else if(rookPosition[0] < kingPostion){
+         if(rookPosition[1] > kingPostion){
+             checkPostion = true;
+         }else{
+             checkPostion = false;
+            }
+        }else{
+         checkPostion = false;
+        }
+
+
+        console.log(checkPostion)
+
+       if(checkPostion == false){
+        chess960();
        }
-
+ 
+       
+ 
        for(i = 0; i < 8; i++){
         //console.log(here[i]);
         //console.log("white" + randomIndex[i]);
-
+ 
         if(randomIndex[i] == "0" ){
             randomIndex[i] = "56";
         }else if(randomIndex[i] == "1" ){
@@ -109,7 +158,7 @@ function chess960(){
         }else if(randomIndex[i] == "7" ){
             randomIndex[i] = "63";
         }
-
+ 
         if(randomChessPieces[i] == "k" ){
             randomChessPieces[i] = "l";
         }else if(randomChessPieces[i] == "q" ){
@@ -121,26 +170,26 @@ function chess960(){
         }else if(randomChessPieces[i] == "b" ){
             randomChessPieces[i] = "v";
         }
-
+ 
         values[randomIndex[i]] = randomChessPieces[i];
-
-        console.log("white " + randomIndex[i]);
-        console.log("white " + randomChessPieces[i]);
-      
-
-        //console.log("Whilte" + randomIndex[i]);
+ 
+        //console.log("white " + randomIndex[i]);
+        //console.log("white " + randomChessPieces[i]);
+     
+ 
+ 
        }
-
-
-
-
+ 
+ 
+ 
+ 
      
    
-  
+ 
 }
-
-
-    
+ 
+ 
+   
  chess960();
 
 
