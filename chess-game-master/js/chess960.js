@@ -43,9 +43,11 @@ window.onload = function(){
 
 
 //------------------------------------------------------------
-
+ 
+//Note: create a chess graph that has empty pieces
 var values = []
  
+//Note: function for randomize array 
 function randomArrayShuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
     while (0 !== currentIndex) {
@@ -58,17 +60,22 @@ function randomArrayShuffle(array) {
     return array;
   }
  
+//Note: array that stores index for black chess pieces in the chess graph
 var index = ["0","1","2","3","4","5","6","7"]
-//var randomIndex = ( randomArrayShuffle(index))
- 
+//Note: array that stores chess pieces (king,queen,rook,knight,bishop,rook,knight,bishop)
 var chessPieces = ["k","q","r","n","b","r","n","b"]
-//var randomChessPieces = ( randomArrayShuffle(chessPieces))
  
+
+//Note: logic for chess960
 function chess960(){
  
+    //shuffle index array and chesspieces array
     var randomIndex = ( randomArrayShuffle(index))
     var randomChessPieces = ( randomArrayShuffle(chessPieces))
  
+    //because pawn just gonna stay in the same position for both sides 
+    //for loop to place all the black pawns and white pawns in the same 
+    //index in the chess graph
     for(let i = 0; i < 64; i++){
         if(i > 7 && i < 16  ){
             values.push("p");
@@ -80,14 +87,13 @@ function chess960(){
         }
     }
 
-    //++++++++++++++++++++++++++++++++++++++++++++=
- 
- 
+
     var rookPosition = []
     var kingPostion;
     var checkPostion;
 
  
+    //Randomly place k,q,n,b,r in index from 0 - 7
     function randomPostion(){
 
         for(i = 0; i < 8; i++){
@@ -101,17 +107,18 @@ function chess960(){
                 kingPostion = randomIndex[i];
             }
 
-            console.log("black index " + randomIndex[i]);
-            console.log("black chess piece " + randomChessPieces[i]);
+            //console.log("black index " + randomIndex[i]);
+            //console.log("black chess piece " + randomChessPieces[i]);
            }
     }
  
     randomPostion();
 
-    
         //console.log("Rook Postion: " + rookPosition)
         //console.log("King Postion: " + kingPostion)
  
+
+        //checking if the king is between 2 rooks 
         if(rookPosition[0] > kingPostion){
          if(rookPosition[1] < kingPostion){
              checkPostion = true;
@@ -129,14 +136,14 @@ function chess960(){
         }
 
 
-        console.log(checkPostion)
+        //console.log(checkPostion)
 
+        
        if(checkPostion == false){
         chess960();
        }
  
-       
- 
+       //Mirror of the black side 
        for(i = 0; i < 8; i++){
         //console.log(here[i]);
         //console.log("white" + randomIndex[i]);
@@ -175,26 +182,16 @@ function chess960(){
  
         //console.log("white " + randomIndex[i]);
         //console.log("white " + randomChessPieces[i]);
-     
- 
- 
-       }
- 
- 
- 
- 
-     
-   
- 
+       } 
 }
  
  
    
  chess960();
-
-
-
-//-------------------------------------------------------------------------
+ 
+ 
+ 
+//------------------------------------------------------------------
 
 
 
