@@ -188,6 +188,109 @@ function chess960(){
  
    
  chess960();
+    
+     //Unit test to check if all pawns are in the right location 
+ console.log("Pawns Unit Test:")
+ var pawnsTest;
+ for(i = 7; i < 15; i++){
+    if(values[i] == "p"){
+        pawnsTest = true;
+    }else{
+        pawnsTest = false;
+    }
+ }
+
+ console.log(pawnsTest)
+
+ //Unit test to check if there are two knights place in the black side randomly 
+ console.log("Knights Unit Test:")
+ var knightsTest;
+ if(knightNumber >= 2){
+    knightsTest = true;
+ }else{
+    knightsTest = false;
+ }
+ console.log(knightsTest)
+
+
+ //Unit test to check if king is between two rooks
+ console.log("King and Rooks Unit Test:")
+ 
+ var kingRooksTest;
+ if(rookPositionCheck[0] > kingPostionCheck){
+    if(rookPositionCheck[1] < kingPostionCheck){
+        kingRooksTest = true;
+    }
+ }else if(rookPositionCheck[0] < kingPostionCheck){
+    if(rookPositionCheck[1] > kingPostionCheck){
+        kingRooksTest = true;
+    }
+ }else{
+    kingRooksTest = false;
+ }
+ 
+ console.log(kingRooksTest)
+
+ //Unit test to check if king and queen in the white side are the same as the black side
+ console.log("Both side queens Unit Test: ")
+ var bothSideCheck;
+ if(queenPostionCheck == 0){
+    if(values[56] == 'w'){
+        bothSideCheck = true;
+    }else{
+        bothSideCheck = false;
+    }
+ }
+ if(queenPostionCheck == 1){
+    if(values[57] == 'w'){
+        bothSideCheck = true;
+    }
+ }
+ if(queenPostionCheck == 2){
+    if(values[58] == 'w'){
+        bothSideCheck = true;
+    }else{
+        bothSideCheck = false;
+    }
+ }
+ if(queenPostionCheck == 3){
+    if(values[59] == 'w'){
+        bothSideCheck = true;
+    }else{
+        bothSideCheck = false;
+    }
+ }
+ if(queenPostionCheck == 4){
+    if(values[60] == 'w'){
+        bothSideCheck = true;
+    }else{
+        bothSideCheck = false;
+    }
+ }
+ if(queenPostionCheck == 5){
+    if(values[61] == 'w'){
+        bothSideCheck = true;
+    }else{
+        bothSideCheck = false;
+    }
+ }
+ if(queenPostionCheck == 6){
+    if(values[62] == 'w'){
+        bothSideCheck = true;
+    }else{
+        bothSideCheck = false;
+    }
+ }
+ if(queenPostionCheck == 7){
+    if(values[63] == 'w'){
+        bothSideCheck = true;
+    }else{
+        bothSideCheck = false;
+    }
+ }
+
+ console.log(bothSideCheck);
+
  
  
  
