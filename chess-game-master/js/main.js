@@ -78,6 +78,91 @@ window.onload = function(){
     }
 
     updateSquarecolor();
+    
+    //-------------------------------------------------------------------------------------
+
+      //Unit check if every chess piece is in the right location in the black side
+      console.log("Chess pieces location unit test: ")
+      var rooksCheck;
+      var knightsCheck;
+      var bishopCheck;
+      var kingCheck;
+      var queenCheck;
+
+      if(values[0] == "r"){
+        if(values[7] == "r"){
+            rooksCheck = true;
+        }else{
+            rooksCheck = false;
+        }
+      }else{
+        rooksCheck = false;
+      }
+
+      console.log("Rooks Check: ");
+      console.log(rooksCheck);
+
+      if(values[1] == "n"){
+        if(values[6] == "n"){
+            knightsCheck = true;
+        }else{
+            knightsCheck = false;
+        }
+      }else{
+        knightsCheck = false;
+      }
+
+      console.log("Kinghts Check: ");
+      console.log(knightsCheck);
+
+      if(values[2] == "b"){
+        if(values[5] == "b"){
+            bishopCheck = true;
+        }else{
+            bishopCheck = false;
+        }
+      }else{
+        bishopCheck = false;
+      }
+
+      console.log("Bishops Check: ");
+      console.log(bishopCheck);
+
+      if(values[3] == "q"){
+        queenCheck = true;
+      }else{
+        queenCheck = false;
+      }
+
+      console.log("Queen Check: ");
+      console.log(queenCheck);
+
+      if(values[4] == "k"){
+        kingCheck = true;
+      }else{
+        kingCheck = false;
+      }
+
+      console.log("King Check: ");
+      console.log(kingCheck);
+     
+
+   
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+//-------------------------------------------------------------------------------------
 
     var moveable = false;
     var moveTarget = "";
